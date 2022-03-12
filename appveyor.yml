@@ -13,7 +13,11 @@ after_build:
     
     New-Item -Path C:\ -ItemType Directory -Name app -Confirm:$false -Force
     
+    Test-Path C:\projects\optechx-downloadfile\optechx.DownloadFile\bin\Release\netcoreapp3.1\
+    
     Copy-Item -Path C:\projects\optechx-downloadfile\optechx.DownloadFile\bin\Release\netcoreapp3.1\ -Destination C:\app\ -Recurse -Confirm:$false
+    
+    dir C:\app
     
     $Env:PATH
 test_script:
