@@ -1,5 +1,5 @@
 version: 1.0.{build}
-image: Visual Studio 2019
+image: Visual Studio 2022
 configuration: Release
 platform: Any CPU
 before_build:
@@ -7,3 +7,5 @@ before_build:
 build:
   project: optechx.DownloadFile.sln
   verbosity: minimal
+after_build:
+- ps: Get-ChildItem -Path . -Recurse
