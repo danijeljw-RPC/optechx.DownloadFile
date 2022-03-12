@@ -17,11 +17,10 @@ after_build:
     
     Copy-Item -Path C:\projects\optechx-downloadfile\optechx.DownloadFile\bin\Release\netcoreapp3.1\ -Destination C:\app\ -Recurse -Confirm:$false
     
-    dir C:\app
-    
+    dir C:\app\netcoreapp3.1\    
     $Env:PATH
 test_script:
 - ps: >-
-    & C:\app\optechx.DownloadFile.exe https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2101120039/AcroRdrDC2101120039_MUI.exe $env:TMP\AcroRdrDC2101120039_MUI.exe
+    & C:\app\netcoreapp3.1\optechx.DownloadFile.exe https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2101120039/AcroRdrDC2101120039_MUI.exe $env:TMP\AcroRdrDC2101120039_MUI.exe
 
     Get-ChildItem -Path $Env:TMP -Filter "*.exe"
